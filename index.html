@@ -47,8 +47,21 @@
 		function animate__bottom(){
 			$("#bottom").slideUp(4000).slideDown(4000);
 		};
-		setInterval(animate_heading1,100)
-		setInterval(animate__bottom,100)
-		setInterval(anime,6000)
+		var leftOffset1 = 500;
+		var leftOffset0 = 0;
+		var moving_1 = function () {
+			$("#img0").offset({left:leftOffset1});
+			$("#img1").offset({left:leftOffset0});
+			leftOffset1++;
+			leftOffset0++;
+			if (leftOffset1 > 1000){
+				leftOffset1 = 500;
+				leftOffset0 = 0;
+			}
+		};
+		setInterval(animate_heading1,100);
+		setInterval(animate__bottom,100);
+		setInterval(anime,4000);
+		setInterval(moving_1,30);
 	</script>
 </html>
